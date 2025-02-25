@@ -1,107 +1,139 @@
 <html>
-    <head>
-        <title> Translator</title>
-        <style>
-        </style>
-    </head>
-    <body>
-        <input type="text"  id="city" placeholder="Enter city name"/>
-        <button onclick="getCityInfo()"> Get Info</button>
 
-        <div id="city-info">
+<head>
+    <title> Translator</title>
+    <style>
+        body {
+            background-color: rgb(190, 249, 249);
+        }
 
-        </div>
+        .text-box {
+            margin: 20px;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(2, 138, 138);
+            box-shadow: 0px 2px 2px 0px rgb(0, 28, 28);
 
-        <script>
-                const cityInfo = {
-                pune: {
-                    name:'Pune',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:'Pune, city, west-central Maharashtra state, western India, at the junction of the Mula and Mutha rivers.Called “Queen of the Deccan,” Pune is the cultural capital of the Maratha peoples. The city first gained importance as the capital of the Bhonsle Marathas in the 17th century.',
-                    image:"./pune.jpg",
-            
-                },
+        }
 
-                raigad: {
-                    name:'Raigad',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"The district is named after Raigad Fort, the historic capital of Chhatrapati Shivaji Maharaj’s Swarajya.With its scenic beaches, dense forests, waterfalls, and historic forts, Raigad is a paradise for nature lovers, history enthusiasts, and tourists alike.",
-                    image: "./raigad.jpg",
-                },
+        .text-box:focus {
+            outline: none;
+        }
 
-                sindhudurg: {
-                    name:'Sindhudurg',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"Sindhudurg district is a coastal district in Maharashtra, India. It was created in 1981 by dividing the Ratnagiri district. The district is named after the Sindhudurg island-fort, which was built by Chhatrapati Shivaji, the 17th-century ruler of Maratha Empire. The fort was constructed to counter the foreign colonizers and the Siddis of Janjira.",
-                    image: "./sindhudurg.jpg",
-                },
+        .btn {
+            margin: 20px;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(2, 138, 138);
+            box-shadow: 0px 2px 2px 0px rgb(0, 28, 28);
+        }
 
-                satara: {
-                    name:'Satara',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"Satara is a city located in the Satara District of Maharashtra state of India, near the confluence of the river Krishna and its tributary, the Venna.The city was established in the 16th century.The city gets its name from the seven forts (Sat-Tara) which are around the city. The city is known as a Soldier's city as well as Pensioner's city. The city had a population of 179,147 in 2011.",
-                    image: "./satara.jpg",
-                },
-            
-                nashik: {
-                    name:'Nashik',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"Nashik is a city in the northern region of the Indian state of Maharashtra. Situated on the banks of the river Godavari. The population of Nashik city is around 2.2 million and is emerging as one of the fastest-growing cities in India.",
-                    image: "./nashik.jpg",
-                },
-            
-                thane: {
-                    name:'Thane',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"Thane is a metropolitan city in the state of Maharashtra in India. It is located on the northwestern side of the Salsette Island, at the mouth of the Thana River and head of the Ulhas estuary. It is an immediate neighbour of Mumbai city proper, and a part of the Mumbai Metropolitan Region. Thane is also known as the “City of Lakes”, because of the 30 scenic lakes within the city and district.",
-                    image: "./thane.jpg",
-                },
-            
-                kohlapur: {
-                    name:'Kohlapur',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"Kolhapur is a city in the southern part of the Indian state of Maharashtra, situated on the banks of the Panchganga River. It has a rich historical, religious, and cultural heritage, and is known for its Mahalakshmi Temple.",
-                    image: "./kolhapur.jpg",
-                },
-            
-                ahmednagar: {
-                    name:'Ahmednagar',
-                    state:'Maharashtra',
-                    country:'India',
-                    info:"Ahmednagar, a city in India, is rich in history, culture, and natural beauty. From iconic forts to vibrant festivals, it offers an unforgettable experience for visitors, showcasing the essence of India’s diversity and heritage.",
-                    image: "./nagar.jpg",
-                },
-            };
+        .city-info {
+            font-size: 30px;
+            font-family: ' Courier';
+            padding: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="city" placeholder="Enter city name" class="text-box">
+    <button onclick="getCityInfo()" class="btn"> Get Info</button>
+
+    <div id="city-info" class="city-info">
+
+    </div>
+
+    <script>
+        const cityInfo = {
+            pune: {
+                name: 'Pune',
+                state: 'Maharashtra',
+                country: 'India',
+                info: 'Pune, city, west-central Maharashtra state, western India, at the junction of the Mula and Mutha rivers.Called “Queen of the Deccan,” Pune is the cultural capital of the Maratha peoples. The city first gained importance as the capital of the Bhonsle Marathas in the 17th century.',
+                image: "./pune.jpg",
+            },
+
+            raigad: {
+                name: 'Raigad',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "The district is named after Raigad Fort, the historic capital of Chhatrapati Shivaji Maharaj’s Swarajya.With its scenic beaches, dense forests, waterfalls, and historic forts, Raigad is a paradise for nature lovers, history enthusiasts, and tourists alike.",
+                image: "./raigad.jpg",
+            },
+
+            sindhudurg: {
+                name: 'Sindhudurg',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "Sindhudurg district is a coastal district in Maharashtra, India. It was created in 1981 by dividing the Ratnagiri district. The district is named after the Sindhudurg island-fort, which was built by Chhatrapati Shivaji, the 17th-century ruler of Maratha Empire. The fort was constructed to counter the foreign colonizers and the Siddis of Janjira.",
+                image: "./sindhudurg.jpg",
+            },
+
+            satara: {
+                name: 'Satara',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "Satara is a city located in the Satara District of Maharashtra state of India, near the confluence of the river Krishna and its tributary, the Venna.The city was established in the 16th century.The city gets its name from the seven forts (Sat-Tara) which are around the city. The city is known as a Soldier's city as well as Pensioner's city. The city had a population of 179,147 in 2011.",
+                image: "./satara.jpg",
+            },
+
+            nashik: {
+                name: 'Nashik',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "Nashik is a city in the northern region of the Indian state of Maharashtra. Situated on the banks of the river Godavari. The population of Nashik city is around 2.2 million and is emerging as one of the fastest-growing cities in India.",
+                image: "./nashik.jpg",
+            },
+
+            thane: {
+                name: 'Thane',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "Thane is a metropolitan city in the state of Maharashtra in India. It is located on the northwestern side of the Salsette Island, at the mouth of the Thana River and head of the Ulhas estuary. It is an immediate neighbour of Mumbai city proper, and a part of the Mumbai Metropolitan Region. Thane is also known as the “City of Lakes”, because of the 30 scenic lakes within the city and district.",
+                image: "./thane.jpg",
+            },
+
+            kohlapur: {
+                name: 'Kohlapur',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "Kolhapur is a city in the southern part of the Indian state of Maharashtra, situated on the banks of the Panchganga River. It has a rich historical, religious, and cultural heritage, and is known for its Mahalakshmi Temple.",
+                image: "./kolhapur.jpg",
+            },
+
+            ahmednagar: {
+                name: 'Ahmednagar',
+                state: 'Maharashtra',
+                country: 'India',
+                info: "Ahmednagar, a city in India, is rich in history, culture, and natural beauty. From iconic forts to vibrant festivals, it offers an unforgettable experience for visitors, showcasing the essence of India’s diversity and heritage.",
+                image: "./nagar.jpg",
+            },
+        };
 
 
-            function getCityInfo(){
-                const cityName = document.getElementById("city").value.toLowerCase();
+        function getCityInfo() {
+            const cityName = document.getElementById("city").value.toLowerCase();
 
-                const cityDetails = cityInfo[cityName];
+            const cityDetails = cityInfo[cityName];
 
-                if (!cityDetails){
-                    alert("city not found");
-                    return;
-                }
+            if (!cityDetails) {
+                alert("city not found");
+                return;
+            }
 
-                const cityInfoDiv = document.getElementById("city-info");
+            const cityInfoDiv = document.getElementById("city-info");
 
-                cityInfoDiv.innerHTML =`
-                <img src= " ${cityDetails.image}" alt="${cityDetails.name}"/>
-                <h2>${cityDetails.name}</h2>
+            cityInfoDiv.innerHTML = `
+                <img src= " ${cityDetails.image}" alt="${cityDetails.name}" height="300px" width="600px"/>
+                <h1>${cityDetails.name}</h1>
                 <p>$state: ${cityDetails.state}</p>
                 <p>$country: ${cityDetails.country}</p>
                 <p>${cityDetails.info}</p>`;
+        }
+    </script>
+</body>
 
-
-            }
-        </script>
-    </body>
 </html>
